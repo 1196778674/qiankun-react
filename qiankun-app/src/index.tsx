@@ -11,7 +11,7 @@ function render(props: { container?: any; }) {
     <Router basename={window.__POWERED_BY_QIANKUN__ ? '/qiankun' : '/'}>
       <App />
     </Router>
-  , container ? container.querySelector('#rootApp') : document.querySelector('#rootApp'));
+  , container ? container.querySelector('#root') : document.getElementById('root'));
 }
 
 if (!window.__POWERED_BY_QIANKUN__) {
@@ -29,7 +29,7 @@ export async function mount(props: { container?: any; }) {
 
 export async function unmount(props: { container: any; }) {
   const { container } = props;
-  ReactDOM.unmountComponentAtNode(container ? container.querySelector('#rootApp') : document.querySelector('#rootApp'));
+  ReactDOM.unmountComponentAtNode(container ? container.querySelector('#root') : document.getElementById('root'));
 }
 
 // If you want to start measuring performance in your app, pass a function
