@@ -47,7 +47,6 @@ const Index: FC = ({children}) => {
                 }}
             >
                 {children}
-                <div id="rootApp"></div>
             </Content>
             </Layout>
         </Layout>

@@ -6,13 +6,20 @@ import Page from './views/page'
 
 import { registerMicroApps, start } from 'qiankun';
 
+const AppContainer: FC = () => {
+  return (
+    <div id="app">HOME</div>
+  )
+}
 
 const App: FC = (props) => {
     return (
         <Layout>
-            Home
             <Switch>
                 <Route path="/page" component={Page} />
+                <Route path="/">
+                  <AppContainer />
+                </Route>
             </Switch>
         </Layout>
     )
@@ -23,7 +30,7 @@ registerMicroApps([
   {
     name: 'qiankun-app',
     entry: '//localhost:3002',
-    container: '#rootApp',
+    container: '#app',
     activeRule: '/qiankun',
   }
 ]);
